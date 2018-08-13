@@ -3,8 +3,8 @@ module Recurly
     class SubscriptionChangeCreate < Request
 
       # @!attribute add_ons
-      #   @return [Array[SubscriptionAddOnCreate]] If you set this value you include all the add-ons and their quantities and amounts. The values you include will replace the previous values entirely.
-      define_attribute :add_ons, Array, {:item_type => :SubscriptionAddOnCreate}
+      #   @return [Array[String]] If you set this value you include all the add-ons and their quantities and amounts. The values you include will replace the previous values entirely.
+      define_attribute :add_ons, Array, {:item_type => String}
 
       # @!attribute collection_method
       #   @return [String] Collection method

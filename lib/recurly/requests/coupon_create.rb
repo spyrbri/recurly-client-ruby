@@ -1,6 +1,6 @@
 module Recurly
   module Requests
-    class CreateCoupon < Request
+    class CouponCreate < Request
 
       # @!attribute applies_to_all_plans
       #   @return [Boolean] The coupon is valid for all plans if true. If false then `plans` and `plans_names` will list the applicable plans.

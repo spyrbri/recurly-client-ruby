@@ -3,8 +3,8 @@ module Recurly
     class Invoice < Resource
 
       # @!attribute account
-      #   @return [Account]
-      define_attribute :account, :Account
+      #   @return [AccountMini]
+      define_attribute :account, :AccountMini
 
       # @!attribute address
       #   @return [Address]
