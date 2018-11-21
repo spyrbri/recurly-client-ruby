@@ -400,6 +400,7 @@ module Recurly
       # @param xml [String, REXML::Element, Nokogiri::XML::Node]
       # @see from_response
       def from_xml(xml)
+        raw_xml = xml
         xml = XML.new xml
         record = new
 
@@ -471,6 +472,10 @@ module Recurly
               end
             end
           end
+        end
+
+        if record.class.in?([Recurly::Invoice, Recurly::Adjustment]) && record.type.nil?
+          raise "type is nil for record: #{record.uuid}, type in instance: #{record.instance_variable_get(:@type)} for xml: #{raw_xml}"
         end
 
         record.persist! if record.respond_to? :persist!
